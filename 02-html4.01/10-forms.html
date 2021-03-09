@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <fieldset>
+            <legend><h2>Personal Data</h2></legend>
+
+            <label for="fullName">FullName:</label>
+            <input type="text" name="fullname">
+            <br>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password"> 
+            <br>
+            <label for="photo">Select Photo...</label>
+            <label type="file" name="photo" id="photo"></label>
+            <br>
+            <label for="dender">Gender:</label>
+            <select name="gender" id="gender">
+                <option value="">Select...</option>
+                <option value="F">Female</option>
+                <option value="M">Male</option>
+            </select>
+            <br>
+            <label for="description">Description</label>
+            <br>
+            <textarea name="description" id="description" cols="30" rows="4"></textarea>
+
+        </fieldset>
+        <fieldset>
+            <legend><h2>Innstitucional Data</h2></legend>
+
+            <label>Select program:</label>
+            <br>
+            <label>
+                <input type="radio" name="program">TGO Diesel Engines
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="program">TGO ADSI
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="program">SISAS
+            </label>
+            <br>
+            <br>
+
+            <label>Select Favorite Subjet:</label>
+            <br>
+            <label>
+                <input type="checkbox" name="subjetct"> English
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="subject"> Ethics
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="subbject"> Physical Culture
+            </label>
+            <hr>
+            <input type="submit" value="SEND DATA">
+            <input type="reset" value="RESET DATA">
+        </fieldset>
+    </form>    
+</body>
+</html>

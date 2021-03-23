@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Selectors</title>
+    <style>
+        ul > li{
+            background-color: green;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        ul li + li + li {
+            background-color: violet;
+        }
+
+        li[class]{
+            background-color: #1000f3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Advance Selectors</h1>
+    <h2>Children Selector: ul > li</h2>
+    <h2>Adjacent Selector: ul  li + li + li</h2>
+    <h2>Attribute Selectors: li[class=highlight]</h2>
+    
+    <ol>
+        <li>
+            League Of Legends Womens
+            <ul>
+                <li class="highlight">Jinx</li>
+                <li>Rex´say</li>
+                <li>zoe</li>
+            </ul>
+        </li> 
+        <li>   
+            League Of Legends Mens
+            <ul>
+                <li class="highlight">Sion</li>
+                <li>Jhin</li>
+                <li>Alistar</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>

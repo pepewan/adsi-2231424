@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Selectors</title>
+    <style>
+        *{
+            border: 2px dotted coral;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        h2{
+            background-color: coral;
+        }
+        p span{
+            background-color: deepskyblue;
+        }
+        .higlight{
+            background-color: greenyellow;
+        }
+        #elem03{
+            background-color: purple;
+        }
+        div.box p.first{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Baic Selectors</h1>
+    <hr>
+    <h2>Universal Selector: *</h2>
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit debitis fugit nesciunt at nulla, asperiores reprehenderit 
+            velit et vel amet ipsam officiis hic perspiciatis. Facere illum molestias officiis est eius?
+        </p>
+    </div>
+    <!----------------------------->
+    <h2>Type/Label: h2</h2>
+
+    <h2>Descending Selector: p span</h2>
+    <div>
+        <p>
+             <span>Lorem ipsum dolor</span> sit amet consectetur adipisicing elit. Impedit debitis fugit nesciunt at nulla, asperiores reprehenderit 
+            velit et vel amet ipsam <span> hic perspiciatis</span>. Facere illum molestias officiis est eius?
+        </p>
+    </div>
+
+    <h2 class="higlight">Class Selector: .highlight</h2>
+
+    <h2>ID Selectotr: #eleme03</h2>
+    <ol>
+        <li id="elem01">Elemet 1</li>
+        <li id="elem02">Elemet 2</li>
+        <li id="elem03">Elemet 3</li>
+        <li id="elem04">Elemet 4</li>
+        <li id="elem05">Elemet 5</li>
+    </ol>
+    <h2>Combine Selectors: div.box p.first</h2>
+    <div class="box">
+        <p class="first">lorem</p>
+        <p>lorem</p>
+        <p>lorem</p>
+        <p>lorem</p>
+        <p>lorem</p>
+    </div>
+</body>
+</html>

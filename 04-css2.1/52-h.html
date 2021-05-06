@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge</title>
+    <style>
+        body{
+            background-color: #17A053;
+            border: 10px solid #fff;
+            margin: 0px;
+        }
+
+
+
+        main{
+            margin: 10px 500px; 
+        }
+
+
+
+        div.logo{
+            height: 192px;
+            width: 192px;
+            background: url(imgs/spriteweb1.png) no-repeat;
+            background-position: -10px -398px;
+            margin: 10px 360px;
+        }
+
+
+
+        div.menu{
+            background-color: #17A053;
+        }
+        div.menu ul{
+            list-style: none;
+            padding: 0px;
+            display:flex;
+            justify-content: space-between;
+            width: 945px;
+        }
+        div.menu ul li{
+            height: 50px;
+            width: 180px;
+        }
+        div.menu ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            font-family:'Roboto', sans-serif;
+            text-align: center;
+            display: block;
+            width: 170px;
+            height: 35px;
+            background-color: #185E2B;
+            padding-top: 20px;
+            border-bottom: 5px solid white;
+        }
+        div.menu ul li a:hover{
+            background-color: #0b2b13;
+            border-bottom: 5px solid #eeff00;
+        }
+
+
+
+        div.publicidad{
+            background-color: #185E2B;
+            height: 250px;
+            width: 935px;
+            margin-top: 35px;
+            display: flex;
+        }
+        div.publicidad div.publicidad1{          
+            background: url(imgs/spriteweb1.png) no-repeat;
+            background-position:-518px -7px ;
+            height: 200px;
+            width: 276px;
+            margin: 25px;
+            border:1px solid #fff;
+        }
+        div.publicidad div.publicidad1 a{
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            font-family:'Roboto', sans-serif;
+            color: #000000;
+            background-color: #ffffff50;
+            height: 60px;
+            width: 276px;
+        }
+        div.publicidad div.publicidad1 a p{
+            margin: 0px;
+            height: 40px;
+            width: 276px;
+            padding-top: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+        div.publicidad div.publicidad2{          
+            background: url(imgs/spriteweb1.png) no-repeat;
+            background-position:-518px -7px ;
+            height: 200px;
+            width: 276px;
+            margin: 25px;
+            margin-left: 0px;
+            border:1px solid #fff;
+        }
+        div.publicidad div.publicidad2 a{
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            font-family:'Roboto', sans-serif;
+            color: #000000;
+            background-color: #ffffff50;
+            height: 60px;
+            width: 275px;
+        }
+        div.publicidad div.publicidad2 a p{
+            margin: 0px;
+            height: 40px;
+            width: 275px;
+            padding-top: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+        div.publicidad div.publicidad3{          
+            background: url(imgs/spriteweb1.png) no-repeat;
+            background-position:-518px -7px ;
+            height: 200px;
+            width: 276px;
+            margin: 25px;
+            margin-left: 0px;
+            border:1px solid #fff;
+        }
+        div.publicidad div.publicidad3 a{
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            font-family:'Roboto', sans-serif;
+            color: #000000;
+            background-color: #ffffff50;
+            height: 60px;
+            width: 277px;
+        }
+        div.publicidad div.publicidad3 a p{
+            margin: 0px;
+            height: 40px;
+            width: 277px;
+            padding-top: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+        div.publicidad div.publicidad1:hover a p 
+        {
+            background-color:  #ffffffc0;
+        }
+        div.publicidad div.publicidad2:hover a p 
+        {
+            background-color:  #ffffffc0;
+        }
+        div.publicidad div.publicidad3:hover a p 
+        {
+            background-color:  #ffffffc0;
+        }
+
+        
+           
+        
+        
+
+        div.texto1{
+            background-color: #ffffff;
+            height: 220px;
+            width: 925px;
+            margin-top: 25px;
+            display: flex;
+            border: 5px solid #185E2B;
+            border-bottom: 2.5px solid #185E2B;
+        }
+        div.texto1 div.logo-izq{
+            background: url(imgs/spriteweb1.png) no-repeat;
+            height: 84px;
+            width: 90px;
+            background-position: -292px -497px;
+            margin-top: 60px;
+            margin-left: 24px;
+        }
+        div.texto1 div.texto-medio{
+            margin: 25px 30px;
+            height: 160px;
+            width: 575px;
+        }
+        div.texto1 div.texto-medio a{
+            font-size: 15px;
+            font-family:'Roboto', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 1.5em;
+            color: #000;
+        }
+        div.texto1 div.logo-der{
+            background: url(imgs/spriteweb1.png) no-repeat;
+            height: 158px;
+            width: 88px;
+            background-position: -95px -210px;
+            margin-top: 20px;
+            margin-left: 24px;           
+        }
+
+
+        div.texto2{
+            background-color: #ffffff;
+            height: 220px;
+            width: 925px;
+            margin-top: 0;
+            display: flex;
+            border: 5px solid #185E2B;
+            border-top: 2.5px solid #185E2B;
+            border-bottom: 2.5px solid #185E2B;
+        }
+        div.texto2 div.logo-izq{
+            background: url(imgs/spriteweb1.png) no-repeat;
+            height: 84px;
+            width: 90px;
+            background-position: -292px -497px;
+            margin-top: 60px;
+            margin-left: 24px;
+        }
+        div.texto2 div.texto-medio{
+            margin: 25px 30px;
+            height: 160px;
+            width: 575px;
+        }
+        div.texto2 div.texto-medio a{
+            font-size: 15px;
+            font-family:'Roboto', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 1.5em;
+            color: #000;
+        }
+        div.texto2 div.logo-der{
+            background: url(imgs/spriteweb1.png) no-repeat;
+            height: 158px;
+            width: 88px;
+            background-position: -95px -210px;
+            margin-top: 20px;
+            margin-left: 24px;           
+        }
+
+
+        div.texto3{
+            background-color: #ffffff;
+            height: 220px;
+            width: 925px;
+            margin-top: 0;
+            display: flex;
+            border: 5px solid #185E2B;
+            border-top: 2.5px solid #185E2B;
+        }
+        div.texto3 div.logo-izq{
+            background: url(imgs/spriteweb1.png) no-repeat;
+            height: 84px;
+            width: 90px;
+            background-position: -292px -497px;
+            margin-top: 60px;
+            margin-left: 24px;
+        }
+        div.texto3 div.texto-medio{
+            margin: 25px 30px;
+            height: 160px;
+            width: 575px;
+        }
+        div.texto3 div.texto-medio a{
+            font-size: 15px;
+            font-family:'Roboto', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 1.5em;
+            color: #000;
+        }
+        div.texto3 div.logo-der{
+            background: url(imgs/spriteweb1.png) no-repeat;
+            height: 158px;
+            width: 88px;
+            background-position: -95px -210px;
+            margin-top: 20px;
+            margin-left: 24px;           
+        }
+
+
+        div.texto1:hover a p{
+            color: #185E2B;
+        }
+        div.texto2:hover a p{
+            color: #185E2B;
+        }
+        div.texto3:hover a p{
+            color: #185E2B;
+        }
+
+
+
+        div.pie{
+            background-color: #fff;
+            width: 935px;
+            height: 300px;
+            margin-top: 25px;
+        }
+        div.pie div.logo2{
+            background: url(imgs/spriteweb1.png) no-repeat;
+            background-position: -494px -420px;
+            width: 273px;
+            height:200px;
+            margin: 5px 330px;
+        } 
+        div.pie div.menu2{
+            background-color: #ffffff;
+        }
+        div.pie div.menu2 ul{
+            list-style: none;
+            padding: 0px;
+            display:flex;
+            justify-content: space-between;
+        }
+        div.pie div.menu2 ul li{
+            height: 50px;
+            width: 170px;
+            margin: 0px 15px;
+        }
+        div.pie div.menu2 ul li a{
+            color: #000000;
+            text-decoration: none;
+            font-size: 15px;
+            font-family:'Roboto', sans-serif;
+            text-align: center;
+            display: block;
+            width: 134px;
+            height: 35px;
+            background-color: #ffffff;
+            padding-top: 20px;
+            border-bottom: 5px solid white;
+        }
+        div.pie div.menu2 ul li a:hover{
+            border-bottom:5px solid #185E2B;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="logo">
+            
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="">INICIO</a></li>
+                <li><a href="">NOSOTROS</a></li>
+                <li><a href="">PORTAFOLIO</a></li>
+                <li><a href="">SERVICIOS</a></li>
+                <li><a href="">CONTACTO</a></li>
+            </ul>
+        </div>
+        <div class="publicidad">
+            <div class="publicidad1">
+                <a href="">
+                    <p>Sprite 01</p>
+                </a>
+            </div>
+            <div class="publicidad2">
+                <a href="">
+                    <p>Sprite 02</p>
+                </a>
+            </div>
+            <div class="publicidad3">
+                <a href="">
+                    <p>Sprite 03</p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="texto1">
+            <div class="logo-izq">
+
+            </div>
+            <div class="texto-medio">
+                <a href="">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, modi distinctio iusto rem explicabo qui natus eveniet. Repellendus placeat suscipit rerum reprehenderit in molestias excepturi fuga enim harum? Amet suscipit, consequatur repellendus molestiae corporis voluptatibus modi ducimus eligendi aliquam deleniti, dicta minima dolor quo mollitia iusto ex ut cum labore. Nihil hic id repellendus pariatur, repudiandae praesentium assumenda vero odit, quia commodi veritatis neque numquam.</p>
+                </a>
+            </div>
+            <div class="logo-der">
+
+            </div>
+        </div>
+        <div class="texto2">
+            <div class="logo-izq">
+
+            </div>
+            <div class="texto-medio">
+                <a href="">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, modi distinctio iusto rem explicabo qui natus eveniet. Repellendus placeat suscipit rerum reprehenderit in molestias excepturi fuga enim harum? Amet suscipit, consequatur repellendus molestiae corporis voluptatibus modi ducimus eligendi aliquam deleniti, dicta minima dolor quo mollitia iusto ex ut cum labore. Nihil hic id repellendus pariatur, repudiandae praesentium assumenda vero odit, quia commodi veritatis neque numquam.</p>
+                </a>
+            </div>
+            <div class="logo-der">
+
+            </div>
+        </div>
+        <div class="texto3">
+            <div class="logo-izq">
+
+            </div>
+            <div class="texto-medio">
+                <a href="">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, modi distinctio iusto rem explicabo qui natus eveniet. Repellendus placeat suscipit rerum reprehenderit in molestias excepturi fuga enim harum? Amet suscipit, consequatur repellendus molestiae corporis voluptatibus modi ducimus eligendi aliquam deleniti, dicta minima dolor quo mollitia iusto ex ut cum labore. Nihil hic id repellendus pariatur, repudiandae praesentium assumenda vero odit, quia commodi veritatis neque numquam.</p>
+                </a>
+            </div>
+            <div class="logo-der">
+
+            </div>
+        </div>
+
+        <div class="pie">
+            <div class="logo2">
+
+            </div>
+            <div class="menu2">
+                <ul>
+                    <li><a href="">INICIO</a></li>
+                    <li><a href="">NOSOTROS</a></li>
+                    <li><a href="">PORTAFOLIO</a></li>
+                    <li><a href="">SERVICIOS</a></li>
+                    <li><a href="">CONTACTO</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

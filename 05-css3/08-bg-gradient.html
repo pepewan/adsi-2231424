@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/master.css">
+    <title>Background Gradient</title>
+    <style>
+        section{
+            border: 2px solid rgb(38, 0, 255);
+            height: 250px;
+            width: 400px;
+            margin: 20px auto;
+        }
+        section.bgg1{
+            background: linear-gradient(to top,blue,red);
+        }
+        section.bgg2{
+            background: linear-gradient(45deg,blue,red);
+        }
+        section.bgg3{
+            background: linear-gradient(to bottom,yellow 40%,blue 40%,blue 70%,red 70%);
+        }
+        section.bgg4{
+            background: linear-gradient(to right,#ca1c1c 50%,#0d10a3 0%);
+        }
+        section.bgg5{
+            background: radial-gradient(circle,#2fbd13,#173b26);
+        }
+        section.bgg6{
+            background: radial-gradient(circle,#ffffff 20%,#000000 20%,#000 40%,#fff 40%,#fff 60%,#000 60%,#000 80%,#fff 80%);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1><span><a href="index.html">&larr;</a>Background Gradient</span></h1>
+        <h3>background: linear-gradient(to top, blue, red)</h3>
+        <section class="bgg1"></section>
+        <h3>background: linear-gradient(45deg, blue, red)</h3>
+        <section class="bgg2"></section>
+        <h3>background: linear-gradient(to bottom, yellow 40%,blue 40%,blue 70%,red 70%)</h3>
+        <section class="bgg3"></section>
+        <h3>background: linear-gradient(to right,#ca1c1c 50%, #0d10a3 0%)</h3>
+        <section class="bgg4"></section>
+        <h3>background: linear-gradient(to right,#ca1c1c 50%,#0d10a3 0%)</h3>
+        <section class="bgg5"></section>
+        <h3>background: radial-gradient(circle,#2fbd13,#173b26)</h3>
+        <section class="bgg6"></section>
+        <h3>background: linear-gradient(to top, blue, red)</h3>
+       
+    </main>
+</body>
+</html>

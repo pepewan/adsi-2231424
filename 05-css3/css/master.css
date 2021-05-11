@@ -11,6 +11,10 @@ main {
     width: 800px;
 }
 
+h3{
+    text-align: center;
+}
+
 main h1 {
     background-color: #40503e;
     border-bottom: 10px solid #5d745a;

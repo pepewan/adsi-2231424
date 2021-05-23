@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        *{transition:all 0.5s ease-out;}
+        body{
+            background-color: #013571;
+            color: #ffffffaa;
+            font: 16px Verdana;
+            margin: 0;
+            padding: 0;
+        }
+        main{
+            border: 10px solid #ffffff66;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        main figure.logo{
+            background: url(imgs/pepsi01.png) no-repeat center;
+            height: 354px;
+            margin: 0 auto;
+            width: 919px;
+        }
+        main h1{
+            text-align: center;
+        }
+        main h1 small{
+            font-size: 0.2em;
+        }
+        main h1 small.bp2,
+        main h1 small.bp3{
+            display: none;
+        }
+        main p{
+            line-height: 1.8em;
+            text-align: center;
+        }
+        @media (max-width: 1024px) {
+            main figure.logo {
+                background: url(imgs/pepsi02.png) no-repeat center;
+                height: 370px;
+                width: 348px;
+            }
+            main h1 small.bp1,
+            main h1 small.bp3 {
+                display: none;
+            }
+            main h1 small.bp2 {
+                display: inline;
+            }
+        }
+        @media (max-width: 780px) {
+            main figure.logo {
+                background: url(imgs/pepsi03.png) no-repeat center;
+                height: 156px;
+                width: 162px;
+            }
+            main h1 small.bp1,
+            main h1 small.bp2 {
+                display: none;
+            }
+            main h1 small.bp3 {
+                display: inline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <figure class="logo"></figure>
+        <h1>Meida 
+            <small class="bp1">( > 1024px )</small>
+            <small class="bp2">( < 1024px )</small>
+            <small class="bp3">( 720px )</small>
+        </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nisi quibusdam eos voluptatum rem nesciunt, iusto, eveniet dolore placeat commodi quos quaerat neque facilis maiores consequatur nemo obcaecati aliquam quasi eaque similique voluptatem laborum! Dignissimos enim magni deserunt, nam maiores quas molestias, inventore eius qui veniam architecto minus doloribus officiis nulla sunt laudantium numquam saepe adipisci dolor quibusdam voluptate soluta et? Est aliquam quo inventore magni distinctio doloremque, suscipit saepe commodi quaerat corporis reiciendis eos ratione natus consectetur perspiciatis sint numquam nesciunt obcaecati voluptatum accusantium maiores laudantium quasi! Voluptates sit dignissimos ipsum rem ullam dicta tenetur nihil in eum tempora impedit minima, deleniti quasi fuga fugit recusandae illo error ad. Modi odio nobis voluptatem ducimus eum, ullam architecto mollitia. Error ex id dolore, suscipit commodi quod repellat architecto perspiciatis. Distinctio cum voluptate illo? Odit quia mollitia asperiores consequatur? Minima eaque possimus qui cumque consequuntur repellendus ratione pariatur cupiditate provident asperiores id autem repellat eius, hic incidunt dolorem repudiandae expedita quia, excepturi maiores, porro dolore magnam iste! Incidunt vel voluptatem vero perferendis sequi velit mollitia voluptate eaque, placeat consectetur voluptatum sunt temporibus eveniet, molestiae maiores, nihil tempore soluta. Tenetur laudantium culpa officia harum earum iste non cumque dicta saepe, officiis aspernatur!</p>
+    </main>
+</body>
+</html>

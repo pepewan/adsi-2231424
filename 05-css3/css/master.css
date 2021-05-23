@@ -23,3 +23,9 @@ main h1 {
     padding: 10px;
     text-align: center;
 }
+
+@media (max-width: 414px) {
+    main {
+        width: 345px;
+    }
+}

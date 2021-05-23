@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Boku No Hero</title>
+    <style>
+        /* tamaño logo */
+        /* tamaño imagenes */
+        
+        *{transition:all 0.3s ease-out;}
+
+        body{
+            padding: 20px 150px;       
+        }
+        .logo{
+            background:url(imgs/Challenge/Boku_no_Hero_Academia_Logo_BIg.png)no-repeat center ;
+            width: 642px;
+            height: 261px;
+            margin: 10px 500px;
+
+        }
+
+        .temporadas{
+            margin: 100px 0;
+            justify-content: space-between;
+            display: flex;
+            height: 300px;
+            width: 1586px;
+        }
+
+        .temporadas .temp1{
+            background: url(imgs/Challenge/logo-temp1.jpg) no-repeat center;
+            width: 300px;
+            height: 300px;
+        }
+
+        .temporadas .temp1 a{
+            display: block;
+            width: 300px;
+            height: 300px;
+            background-color: #ffff0000;
+        }
+        
+        
+        .temporadas .temp1 a p{
+            display: inline-block;
+            margin: 225px 20px 20px 0;
+            background-color: #0000007a;
+            width: 300px;
+            height: 55px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 30px;
+            font-family:'Roboto', sans-serif;
+            color: #fff;
+            transition: all 0.2s ease-in;
+        }
+
+        .temporadas .temp1:hover a p{
+            margin-top: 180px;
+            height: 100px;
+        }
+
+
+
+
+        .temporadas .temp2{
+            background: url(imgs/Challenge/logo-temp2.jpg) no-repeat center;
+            width: 300px;
+            height: 300px;
+        }
+
+        .temporadas .temp2 a{
+            display: block;
+            width: 300px;
+            height: 300px;
+            background-color: #ffff0000;
+        }
+        .temporadas .temp2 a p{
+            display: inline-block;
+            margin: 225px 20px 20px 0;
+            background-color: #0000007a;
+            width: 300px;
+            height: 55px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 30px;
+            font-family:'Roboto', sans-serif;
+            color: #fff;
+            transition: all 0.2s ease-in;
+        }
+
+        .temporadas .temp2:hover a p{
+            margin-top: 180px;
+            height: 100px;
+        }
+
+
+
+        .temporadas .temp3{
+            background: url(imgs/Challenge/logo-temp3.jpg) no-repeat center;
+            width: 300px;
+            height: 300px;
+        }
+
+        .temporadas .temp3 a{
+            display: block;
+            width: 300px;
+            height: 300px;
+            background-color: #ffff0000;
+        }
+
+        .temporadas .temp3 a p{
+            display: inline-block;
+            margin: 225px 20px 20px 0;
+            background-color: #0000007a;
+            width: 300px;
+            height: 55px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 30px;
+            font-family:'Roboto', sans-serif;
+            color: #fff;
+            transition: all 0.2s ease-in;
+        }
+
+        .temporadas .temp3:hover a p{
+            margin-top: 180px;
+            height: 100px;
+        }
+
+
+        .temporadas .temp4{
+            background: url(imgs/Challenge/logo-temp4.jpg) no-repeat center;
+            width: 300px;
+            height: 300px;
+        }
+
+        .temporadas .temp4 a{
+            display: block;
+            width: 300px;
+            height: 300px;
+            background-color: #ffff0000;
+        }
+
+        .temporadas .temp4 a p{
+            display: inline-block;
+            margin: 225px 20px 20px 0;
+            background-color: #0000007a;
+            width: 300px;
+            height: 55px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 30px;
+            font-family:'Roboto', sans-serif;
+            color: #fff;
+            transition: all 0.2s ease-in;
+        }
+
+        .temporadas .temp4:hover a p{
+            margin-top: 180px;
+            height: 100px;
+        }
+
+
+        .texto1{
+            border: 2px #969696 dotted;
+            display: flex;
+            height: 300px;
+            width: 1582px;
+        }
+        .texto1 .imagen{
+            background: url(imgs/Challenge/imagen-medio.jpg)no-repeat center;
+            width: 300px;
+            height: 300px;
+        }
+
+        .texto1 .relato{
+            margin:20px 420px 20px 20px;
+            height: 250px;
+            width: 900px;
+            text-align: justify;
+        }
+
+        .texto1 .relato .texto p.titulo{
+            font-size: 40px;
+            display: inline-block;
+            margin-top: 0;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 0;
+            color: #1d1d1d;
+        }
+        .texto1 .relato .texto p.texto{
+            color: #2e2a2a;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        
+
+
+
+        .texto2{
+            border: 2px #969696 dotted;
+            display: flex;
+            height: 300px;
+            width: 1582px;
+            margin-top: 50px;
+        }
+        .texto2 .imagen{
+            background: url(imgs/Challenge/aoyama.jpg)no-repeat center;
+            width: 300px;
+            height: 300px;
+        }
+
+        .texto2 .relato{
+            margin:20px 420px 20px 20px;
+            height: 250px;
+            width: 900px;
+            text-align: justify;
+        }
+
+        .texto2 .relato .texto p.titulo{
+            font-size: 40px;
+            display: inline-block;
+            margin-top: 0;
+            color: #1d1d1d;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 0;
+        }
+
+        .texto2 .relato .texto p.texto{
+            color: #2e2a2a;
+            font-family: 'Roboto', sans-serif;
+        }
+
+
+        @media (max-width: 1775px){
+            .logo{
+                background:url(imgs/Challenge/Boku_no_Hero_Academia_Logo_medium.png)no-repeat center ;
+                width: 642px;
+                height: 261px;
+                margin: 10px 500px;
+            }
+
+            .temporadas{
+                margin: 100px 500px;
+                flex-wrap: wrap;
+                align-content: space-between;
+                display: flex;
+                height: 650px;
+                width: 650px;
+            }
+            .temporadas .temp1{
+                margin-bottom: 50px;
+            }
+            .temporadas .temp2{
+                margin-bottom: 50px;
+            }
+            .temporadas .temp3{
+                margin: 0;
+            }
+            .temporadas .temp4{
+                margin: 0;
+            }
+
+            .texto1 {
+                width: 650px;
+                height: 300px;
+                margin-top: 250px;                
+                margin: 100px 500px;
+            }
+
+            
+
+            .texto1 .relato{
+                margin-right: 0 ;
+                height: 270px;
+                width: 300px;
+
+            }
+
+            .texto1 .relato .texto p.titulo{
+                font-size: 25px;
+            }
+           
+            .texto1 .relato .texto .texto{
+                height: 200px;
+                overflow: scroll;
+            }
+
+            .texto2 {
+                width: 650px;
+                height: 300px;
+                margin-top: 250px;             
+                margin: 100px 500px;
+            }
+            .texto2 .relato{
+                margin-right: 0 ;
+                height: 270px;
+                width: 300px;
+            }
+           
+            .texto2 .relato .texto .texto{
+                overflow: scroll;
+                height: 200px;
+            }
+
+            .texto2 .relato .texto p.titulo{
+                font-size: 25px;
+                text-align: start;
+            }
+        }
+        @media (max-width: 1340px){
+            .logo{
+                background: url(imgs/Challenge/Boku_no_Hero_Academia_Logo_BIg_small.png) no-repeat center;        
+            }
+
+            .temporadas{
+                margin: 100px 500px;
+                display: inline-block;
+                height: 1325px;
+                width: 650px;
+                margin-bottom: 0;
+            }
+
+            .temporadas .temp1{
+                margin: 25px auto;
+            }
+
+            .temporadas .temp2{
+                margin: 25px auto;
+            }
+
+            .temporadas .temp3{
+                margin: 25px auto;
+            }
+
+            .temporadas .temp4{
+                margin: 25px auto;
+            }
+
+            .texto1{
+                margin: 0 675px;
+                width: 300px;
+                height: 600px;   
+                display: inline-block;  
+            }
+
+            .texto1 .imagen{
+                margin: 0 auto;
+            }
+
+            .texto1 .relato{
+                margin: 10px 0;
+                width: 300px;
+            }
+
+
+            .texto2{
+                margin: 10px 675px;
+                width: 300px;
+                height: 600px;   
+                display: inline-block;  
+            }
+
+            .texto2 .imagen{
+                margin: 0 auto;
+            }
+
+            .texto2 .relato{
+                margin: 10px 0;
+                width: 300px;
+            }
+
+            .texto2 .relato .texto p.titulo{
+                margin-left: 0;
+                text-align: start;
+            }
+        }
+
+
+
+        
+    </style>
+</head>
+<body>
+    <main>
+        <div class="logo">
+
+        </div>
+        <div class="temporadas">
+            <div class="temp1">
+                <a href="">
+                    <p>opm(season 1)</p>
+                </a>
+            </div>
+            <div class="temp2">
+                <a href="">
+                    <p>opm(season 2)</p>
+                </a>
+            </div>
+            <div class="temp3">
+                <a href="">
+                    <p>opm(season 3)</p>
+                </a>
+            </div>
+            <div class="temp4">
+                <a href="">
+                    <p>opm(season 4)</p>
+                </a>
+            </div>
+        </div>
+        <div class="texto1">
+            <div class="imagen">
+
+            </div>
+            <div class="relato">
+                <div class="texto">
+                    <p class="titulo">ALL MIGHT</p>
+                    <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum odit unde sint fuga inventore eveniet quae numquam ipsa sequi qui, cupiditate ab quod corporis optio repellat nobis libero commodi voluptates quo blanditiis at, dolore dolores soluta? Repellat unde temporibus itaque expedita rerum reiciendis, officiis voluptas eum repudiandae cumque! Corrupti, reprehenderit ab vitae veritatis doloribus asperiores. Aspernatur quaerat non quia inventore ut voluptatem dolorem! Beatae excepturi quasi voluptatum minus earum quidem in minima ut, dolore assumenda, commodi consequatur, maxime possimus reiciendis at. Doloribus id dolorem, sed reprehenderit porro mollitia saepe perferendis temporibus pariatur fugit ratione tempora itaque officiis. Eum harum repellat sunt minima modi, dolor pariatur itaque, dolorum ipsa corrupti fugit asperiores corporis temporibus deserunt magni repellendus consequuntur reiciendis explicabo ut inventore. Ut, voluptate, aperiam illo rem rerum ratione, aut explicabo quibusdam omnis nesciunt voluptatum suscipit mollitia alias iste esse unde.</p>
+                </div>
+            </div>
+        </div>
+        <div class="texto2">
+            <div class="imagen">
+
+            </div>
+            <div class="relato">
+                <div class="texto">
+                    <p class="titulo">I CAN NOT STOP TWINKLING</p>
+                    <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum odit unde sint fuga inventore eveniet quae numquam ipsa sequi qui, cupiditate ab quod corporis optio repellat nobis libero commodi voluptates quo blanditiis at, dolore dolores soluta? Repellat unde temporibus itaque expedita rerum reiciendis, officiis voluptas eum repudiandae cumque! Corrupti, reprehenderit ab vitae veritatis doloribus asperiores. Aspernatur quaerat non quia inventore ut voluptatem dolorem! Beatae excepturi quasi voluptatum minus earum quidem in minima ut, dolore assumenda, commodi consequatur, maxime possimus reiciendis at. Doloribus id dolorem, sed reprehenderit porro mollitia saepe perferendis temporibus pariatur fugit ratione tempora itaque officiis. Eum harum repellat sunt minima modi, dolor pariatur itaque, dolorum ipsa corrupti fugit asperiores corporis temporibus deserunt magni repellendus consequuntur reiciendis explicabo ut inventore. Ut, voluptate, aperiam illo rem rerum ratione, aut explicabo quibusdam omnis nesciunt voluptatum suscipit mollitia alias iste esse unde.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

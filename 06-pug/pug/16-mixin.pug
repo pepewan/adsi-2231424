@@ -1,0 +1,16 @@
+doctype
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Mixin
+	body
+		h1 Mixin
+		mixin pet(name)
+			li.pet= name
+		ul
+			+pet('Firulais')
+			+pet('Misifu')
+			+pet('Pinky')
+			+pet('Hawk')
+			
+	

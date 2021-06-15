@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables JS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Variables</span></h1>
+        </header>
+        <section>
+            <h2>Type String: <i id="type-string"></i></h2>
+            <h2>Type Number: <i id="type-number"></i></h2>
+            <h2>Type Boolean: <i id="type-bool"></i></h2>
+            <h2>Type Null/Undefined: <i id="type-null"></i></h2>
+            <h2>Type Array: <i id="type-array"></i></h2>
+            <h2>Type Object: <i id="type-object"></i></h2>
+        </section>
+    </main>
+
+    <script>
+        // ID Elements
+        var tstring = document.getElementById('type-string')
+        var tnumber = document.getElementById('type-number')
+        var tboolean = document.getElementById('type-bool')
+        var tnull = document.getElementById('type-null')
+        var tarray = document.getElementById('type-array')
+        var tobject = document.getElementById('type-object')
+
+        //Type String
+        const string1 = 'ADSI'
+        const string2 = '2231424'
+        const stringr = string1+" "+string2
+        tstring.innerText=stringr
+
+        //Type Number
+        let number1 =8;
+        let number2 =6.99;
+        let numberR =number1+number2
+        tnumber.innerText=numberR
+
+        //Type Boolean
+        var bool = true
+        tboolean.innerText=bool 
+
+        //Type Null and Undefined
+        var name = null
+        var apellido = undefined
+        tnull.innerText=name+" "+apellido
+
+        //Type Arrai
+        var paises=new Array("Rusia","Cuba","Venezuela","China")
+        tarray.innerText=paises
+
+        //type Object
+        var student={
+            name: "Favio",
+            age : 14,
+            estatura : 1.57
+        }
+        tobject.innerText=student.name +" "+ student.age
+    </script>
+</body>
+</html>

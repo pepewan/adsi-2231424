@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments JS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Get Elements</span></h1>
+        </header>
+        <section>
+            <h2>Get Id</h2>
+            <stron id="year"></stron>
+            <!--  -->
+            <h2>Get TagName</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, rerum.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, rerum.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, rerum.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, rerum.</p>
+            <strong id="tags"></strong>
+            <!--  -->
+            <h2>Get ClassName</h2>
+            <ul>
+                <li class="element">Element 1</li>
+                <li class="element">Element 2</li>
+                <li class="element">Element 3</li>
+                <li class="element">Element 4</li>
+                <li class="element">Element 5</li>
+            </ul>
+            <!--  -->
+            <h2>Query Selector/SelectorAll</h2>
+            <button class="btn">Button A</button>
+            <button class="btn">Button B</button>
+        </section>
+    </main>
+    <script>
+        // Get Element by id 
+        let year      =document.getElementById("year");
+        let today     = new Date();
+        year.innerText="Estamos en el año " + today.getFullYear();
+        // Get Element by TagName
+        let ntags     =document.getElementsByTagName('p');
+        let tags      =document.getElementById('tags')
+        tags.innerText="Son " + ntags.length + " parrafos B)"
+        // Get Element by ClassName
+        let elements  =document.getElementsByClassName('element');
+        elements[3].style.backgroundColor="#EFD81D"
+        // Query Selector/SelectorAll
+        let btn       =document.querySelector('section button.btn');
+        let btns      =document.querySelectorAll('section button.btn');
+        btn.style.color="#FF24C1"
+        btns[1].style.color="#C04B46"
+    </script>
+</body>
+</html>

@@ -6,6 +6,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object Vehicle JS</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .skin{
+            background:transparent url(imgs/skin/skin.png) no-repeat;
+            height: 644px;
+            width: 340px;
+            margin: 0 auto;
+            position: relative;
+            transition: all 0.5s ease-out;
+            z-index: 2;
+        }
+        section.attributes{
+            position: relative;
+            padding: 0;
+            top: 100px;
+            left: 27px;
+        }
+        section.attributes h4{
+            color: #ddb70e;
+            font-size: 24px;
+            margin: 0;
+            position: absolute;
+        }
+        section.attributes h4#txt-reference{
+            left: 162px;
+        }
+        section.attributes h4#txt-model{
+            top: 100px;
+        }
+        section.attributes h4#txt-color{
+            left: 162px;
+            top: 100px;
+        }
+        /* -------Dark mode------- */
+        button{
+            border: none;
+            display: block;
+            transition: all 0.2s ease-in;
+            text-indent: 99999px;
+        }
+        button:hover{
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+        button#bt-dark{
+            position:absolute;
+            height: 38px;
+            width: 38px;
+            right: 20px;
+            top: 10px;
+            background: url(imgs/Buttons/night.png) no-repeat;
+        }
+        /*----------- Metodos ------*/
+        section.controls{
+            padding: 0px;
+            position: relative;
+            top: 570px;
+            left: 15px;
+        }
+        section.controls button {
+            height: 50px;
+            display:inline-flex;
+            margin-left: 10px;
+            width: 50px;
+        }
+        section.controls button#bt-on {
+            background: url(imgs/Buttons/play.png) no-repeat;
+            margin-left: 0;
+        }
+        section.controls button#bt-off {
+            background: url(imgs/Buttons/pause.png) no-repeat;
+        }
+        section.controls button#bt-stop {
+            background: url(imgs/Buttons/stop.png) no-repeat;
+        }
+        section.controls button#bt-left {
+            background: url(imgs/Buttons/left.png) no-repeat;
+        }
+        section.controls button#bt-right {
+            background: url(imgs/Buttons/Right.png) no-repeat;
+        }
+        /* Lanscape */
+        section.lanscape{
+            width: 320px;
+            padding: 0;
+            height: 270px;
+            position: absolute;
+            top: 248px;
+            left: 10px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        section.lanscape div.sky{
+            margin-top: 5px;
+            height: 117px;
+            width: 1028px;
+            background: url(imgs/skin/Nube.png)repeat-x;
+        }
+        section.lanscape div.road{
+            margin-top: 65px;
+            height: 99px;
+            width: 1250px;
+            
+            background: url(imgs/skin/Carretera.png)repeat-x;
+        }
+        /* Darkmode */
+        div.skin.dark{
+            background: url(imgs/skin/skin-dark.png) no-repeat;
+        }
+        div.skin.dark button#bt-dark{
+            background: url(imgs/Buttons/day-button.png) no-repeat;
+        }
+        div.skin.dark section.attributes h4{
+            opacity: 0.8;
+            color: #fff;
+        }
+        div.skin.dark figure#moto{
+            background: url(imgs/skin/Moto\ noche.png) no-repeat;
+        }
+        /* moto--- */
+        figure#moto{
+            background: url(imgs/skin/moto.png)no-repeat;
+            top: 350px;
+            width: 227px;
+            height: 113px;
+            left: 15px;
+            position: absolute;
+            z-index: 3;
+        }
+        figure#moto.on{
+            animation: animOn 0.5s infinite;
+        }
+        @keyframes animOn {
+            0%, 100%{top: 350px;}
+            50%     {top: 353px;}
+        }
+        /* -Parallax */
+        section.lanscape.forward div.road{
+            animation: animParallax 2s linear infinite;
+        }
+        @keyframes animParallax {
+            0%{background-position: -0px 0px;}
+            100%{background-position: 1230px 0px;}
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -13,11 +157,127 @@
             <h1><span><a href="index.html">&larr;</a>Object vehicle</span></h1>
         </header>
         <section>
-            
+            <div class="skin">
+                <button id="bt-dark">DM</button>
+                <section class="attributes">
+                    <h4 id="txt-brand"></h4>
+                    <h4 id="txt-reference"></h4>
+                    <h4 id="txt-model"></h4>
+                    <h4 id="txt-color"></h4>
+                </section>
+                <section class="lanscape">
+                    <div class="sky"></div>
+                    <div class="road"></div>
+                </section>
+                <figure id="moto"></figure>
+                <section class="controls">
+                    <button id="bt-on">ON</button>
+                    <button id="bt-off">OFF</button>
+                    <button id="bt-stop">STOP</button>
+                    <button id="bt-left">L</button>
+                    <button id="bt-right">R</button>
+                </section>
+            </div>
         </section>
     </main>
     <script>
+
+        //Variables
+        var tbrand     =document.getElementById("txt-brand");
+        var treference =document.getElementById("txt-reference");
+        var tmodel     =document.getElementById("txt-model");
+        var tcolor     =document.getElementById("txt-color");
+
+        var btdark =document.getElementById("bt-dark");
+        var bton   =document.getElementById("bt-on");
+        var btoff  =document.getElementById("bt-off");
+        var btstop =document.getElementById("bt-stop");
+        var btleft =document.getElementById("bt-left");
+        var btrigh =document.getElementById("bt-right");
+
+
+        var moto=document.getElementById("moto");
+        var skin   =document.querySelector("div.skin");
+        var lanscape   =document.querySelector("section.lanscape");
+        var dmode  =false;
+        var engine =false;
+
+        var vehicle ={
+            
+
+            //Atributos
+            brand: "Davidson",
+            reference: "Klipartz",
+            model: 1996,
+            color: "orange",
+
+            //Metodos
+
+            showAttributes: function(){
+                tbrand.innerHTML    =this.brand;
+                treference.innerHTML=this.reference;
+                tmodel.innerHTML    =this.model;
+                tcolor.innerHTML    =this.color;
+            },
+            on: function(){
+                if(engine == false){
+                    moto.classList.add('on')
+                    engine=true;
+                }
+            },
+            off: function(){
+                if(engine==true){
+                    moto.classList.remove('on')
+                    engine=false;
+                }
+            },
+            stop: function(){
+                alert("STOP");
+            },
+            left: function(){
+                
+            },
+            right: function(){
+                if(engine==treference){
+                    lanscape.classList.add('right')
+                    engine=false;
+                }
+            },
+            darkmode: function(){
+                if (dmode ==false){
+                    skin.classList.add("dark");
+                    dmode=true;
+                }  
+                else{
+                    skin.classList.remove("dark");
+                    dmode=false;
+                }         
+            }
+        }
+        /* Eventos */
+        vehicle.showAttributes();
+
+        btdark.onclick=function(){
+            vehicle.darkmode();
+        }
+        bton.onclick=function(){
+            vehicle.on();
+        }
+        btoff.onclick=function(){
+            vehicle.off();
+        }
+        btstop.onclick=function(){
+            vehicle.stop();
+        }
+        btleft.onclick=function(){
+            vehicle.left();
+        }
+        btrigh.onclick=function(){
+            vehicle.right();
+        }
         
+        /* Dark mode */
+
     </script>
 </body>
 </html>

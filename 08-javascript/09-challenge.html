@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Vehicle JS</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .calculator{
+            height: 680px;
+            width: 414px;
+            margin: 0 auto; 
+        }
+        #skyn{
+            background: url(imgs/Calculator/skyn/Skyn-day/skyn-day.png);
+            height: 680px;
+            width: 414px;
+        }
+        /* Darkmode--------------- */
+        #skyn.dark{
+            background: url(imgs/Calculator/skyn/Skyn-night/Skyn-dark.png);
+            height: 680px;
+            width: 414px;
+        }
+        /* ---------------------- */
+        #dia{
+            background: url(imgs/Calculator/Buttons/mode-day.png);
+            width: 40px;
+            height: 40px;
+            margin-left: 170px;
+        }
+        #noche{
+            background: url(imgs/Calculator/Buttons/mode-night.png);
+            width: 40px;
+            height: 40px;
+            margin-left: 5px;
+        }
+        #display{
+            background-color: #7fffd425;
+            margin-top: 74px;
+            width: 414px;
+            height: 100px;
+            padding-top:40px ;
+        }
+        #display #operacion{
+            width: 400px;
+            height: 20px;
+            margin-left: 10px;
+            text-align: right;
+            background-color: #358d4852;
+        }
+        #display #resultado{
+            width: 400px;
+            height: 60px;
+            margin-left: 10px;
+            margin-top: 12px;
+            font-size: 50px;
+            text-align: right;
+            background-color: #22943b52;
+        }
+
+        .primeraLinea{
+            margin-top: 50px;
+        }
+        #uno{
+            background: url(imgs/Calculator/Buttons/Buttons-numbers/uno.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #dos{
+            background: url(imgs/Calculator/Buttons/Buttons-numbers/dos.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #tres{
+            background: url(imgs/Calculator/Buttons/Buttons-numbers/tres.png);
+            margin: 5px;
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #mas{
+            background: url(imgs/Calculator/Buttons/Buttons-operators/mas.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #potencia{
+            background: url(imgs/Calculator/Buttons/Buttons-operators/potencia.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+
+        .segundaLinea{
+            margin-top: 10px;
+        }
+        #cuatro{
+            background: url(imgs/Calculator/Buttons/Buttons-numbers/cuatro.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #cinco{
+            background: url(imgs/Calculator/Buttons/Buttons-numbers/cinco.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #seis{
+            background: url(imgs/Calculator/Buttons/Buttons-numbers/seis.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #menos{
+            background: url(imgs/Calculator/Buttons/Buttons-operators/menos.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #divisionE{
+            background: url(imgs/Calculator/Buttons/Buttons-operators/division_en.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+
+        .terceraLinea{
+            margin-top: 10px;
+        }
+        #siete{
+            background: url(imgs/Calculator/Buttons/Buttons-numbers/siete.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #ocho{
+            background: url(imgs/Calculator/Buttons/Buttons-numbers/ocho.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #nueve{
+            background: url(imgs/Calculator/Buttons/Buttons-numbers/nueve.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #por{
+            background: url(imgs/Calculator/Buttons/Buttons-operators/por.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #borrar{
+            background: url(imgs/Calculator/Buttons/Buttons-operators/erase.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        
+        .cuartaLinea{
+            margin-top: 10px;
+        }
+        #punto{
+            background: url(imgs/Calculator/Buttons/Buttons-operators/punto.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #cero{
+            background: url(imgs/Calculator/Buttons/Buttons-numbers/cero.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #igual{
+            background: url(imgs/Calculator/Buttons/Buttons-operators/igual.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #division{
+            background: url(imgs/Calculator/Buttons/Buttons-operators/division.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #borrarAll{
+            background: url(imgs/Calculator/Buttons/Buttons-operators/erase_all.png);
+            margin: 5px;
+            width: 68px;
+            height: 68px;
+        }
+        #uno:hover{
+            transform: scale(1.1);
+        }
+        #dos:hover{
+            transform: scale(1.1);
+        }
+        #tres:hover{
+            transform: scale(1.1);
+        }
+        #cuatro:hover{
+            transform: scale(1.1);
+        }
+        #cinco:hover{
+            transform: scale(1.1);
+        }
+        #seis:hover{
+            transform: scale(1.1);
+        }
+        #siete:hover{
+            transform: scale(1.1);
+        }
+        #ocho:hover{
+            transform: scale(1.1);
+        }
+        #nueve:hover{
+            transform: scale(1.1);
+        }
+        #cero:hover{
+            transform: scale(1.1);
+        }
+        #mas:hover{
+            transform: scale(1.1);
+        }
+        #menos:hover{
+            transform: scale(1.1);
+        }
+        #por:hover{
+            transform: scale(1.1);
+        }
+        #potencia:hover{
+            transform: scale(1.1);
+        }
+        #division:hover{
+            transform: scale(1.1);
+        }
+        #igual:hover{
+            transform: scale(1.1);
+        }
+        #divisionE:hover{
+            transform: scale(1.1);
+        }
+        #punto:hover{
+            transform: scale(1.1);
+        }
+        #borrar:hover{
+            transform: scale(1.1);
+        }
+        #borrarAll:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Challenge calculator</span></h1>
+        </header>
+        <section>
+            <div class="calculator">
+                <div id="skyn">
+                    <div class="modo">
+                        <button id="dia"></button>
+                        <button id="noche"></button>
+                    </div>
+                    <div id="display">
+                        <div id="operacion">                          
+                        </div>
+                        <div id="resultado">                           
+                        </div>
+                    </div>
+
+                    <!-- Primera linea B) -->
+                    <div class="primeraLinea">                      
+                        <button id="uno"></button>
+                        <button id="dos"></button>
+                        <button id="tres"></button>
+                        <button id="mas"></button>
+                        <button id="potencia"></button>
+                    </div>
+
+                    <div class="segundaLinea">  
+                        <button id="cuatro"></button>
+                        <button id="cinco"></button>
+                        <button id="seis"></button>
+                        <button id="menos"></button>
+                        <button id="divisionE"></button>
+                    </div>
+
+                    <div class="TerceraLiena">
+                        <button id="siete"></button>
+                        <button id="ocho"></button>
+                        <button id="nueve"></button>
+                        <button id="por"></button>
+                        <button id="borrar"></button>
+                    </div>
+
+                    <div class="cuartaLinea">
+                        <button id="punto"></button>
+                        <button id="cero"></button>                 
+                        <button id="igual"></button>
+                        <button id="division"></button>
+                        <button id="borrarAll"></button>
+                    </div>
+                </div>                
+            </div>
+        </section>
+    </main>
+    <script>
+        var nChar=0
+        var operacion=document.getElementById("operacion")
+        var resultado=document.getElementById("resultado")
+        
+        var skyn = document.getElementById("skyn")
+        var btdia=document.getElementById("dia")
+        var btnoche=document.getElementById("noche")
+
+        var btUno=document.getElementById("uno")
+        var btDos=document.getElementById("dos")
+        var btTres=document.getElementById("tres")
+        var btCuatro=document.getElementById("cuatro")
+        var btCinco=document.getElementById("cinco")
+        var btSeis=document.getElementById("seis")
+        var btSiete=document.getElementById("siete")
+        var btOcho=document.getElementById("ocho")
+        var btNueve=document.getElementById("nueve")
+        var btCero=document.getElementById("cero")
+        var btMas=document.getElementById("mas")
+        var btMenos=document.getElementById("menos")
+        var btPor=document.getElementById("por")
+        var btDivision=document.getElementById("division")
+        var btDivisionE=document.getElementById("divisionE")
+        var btPotencia=document.getElementById("potencia")
+        var btIgual=document.getElementById("igual")
+        var btPunto=document.getElementById("punto")
+        var btBorrar=document.getElementById("borrar")
+        var btBorrarAll=document.getElementById("borrarAll")
+
+        dark=false
+        otroOperador=true
+
+        function addNumero(a){
+            if(nChar<=15)
+                operacion.innerText += a
+                nChar++;
+        }
+
+        function quitarNumero(){
+            operacion.innerText=operacion.innerText.substring(0,operacion.innerText.length-1)
+        }
+
+        function quitarAllNumero(){
+            operacion.innerText =""
+            resultado.innerText= ""
+            nChar=0
+            otroOperador=true
+        }
+
+        function dia(){
+            if (dark==false){
+                skyn.classList.add ("dark")
+                dark=true
+            }
+        }
+        function noche(){
+            if(dark==true){
+                skyn.classList.remove ("dark")
+                dark=false
+            }
+        }
+        function total(){           
+            resultado.innerText=eval(operacion.innerText)
+        }
+        function potencia(a,b){
+            Math.pow(a,b)
+        }
+        
+        btBorrar.onclick=function(){
+            quitarNumero()
+        }
+        btIgual.onclick=function(){
+            total()
+            if (operacion.innerHTML==""){
+                resultado.innerText="Error :c"
+            }
+        }
+        btnoche.onclick=function(){
+            dia()
+        }
+        btdia.onclick=function(){
+            noche()
+        }
+        btUno.onclick=function(){
+            addNumero(1)
+            otroOperador=true
+        }
+        btDos.onclick=function(){
+            addNumero(2)
+            otroOperador=true
+        }
+        btTres.onclick=function(){
+            addNumero(3)
+            otroOperador=true
+        }
+        btCuatro.onclick=function(){
+            addNumero(4)
+            otroOperador=true
+        }
+        btCinco.onclick=function(){
+            addNumero(5)
+            otroOperador=true
+        }
+        btSeis.onclick=function(){
+            addNumero(6)
+            otroOperador=true
+        }
+        btSiete.onclick=function(){
+            addNumero(7)
+            otroOperador=true
+        }
+        btOcho.onclick=function(){
+            addNumero(8)
+            otroOperador=true
+        }
+        btNueve.onclick=function(){
+            addNumero(9)
+            otroOperador=true
+        }
+        btCero.onclick=function(){
+            addNumero(0)
+            otroOperador=true
+        }
+        btBorrarAll.onclick=function(){
+            quitarAllNumero()
+        }
+
+        
+        btMas.onclick=function(){
+            if (otroOperador==true){
+                addNumero("+")
+                otroOperador=false
+            }
+        }
+        
+        btMenos.onclick=function(){
+            if (otroOperador==true){
+                addNumero("-")
+                otroOperador=false
+            }
+        }
+        btPor.onclick=function(){
+            if (otroOperador==true){
+                addNumero("*")
+                otroOperador=false
+            }
+        }
+        btDivision.onclick=function(){
+            if (otroOperador==true){
+                addNumero("/")
+                otroOperador=false
+            }
+        }
+        btPotencia.onclick=function(){
+            if (otroOperador==true){
+                addNumero("**")
+                otroOperador=false
+            }
+        }
+        btDivisionE.onclick=function(){
+            if (otroOperador==true){
+                addNumero("%")
+                otroOperador=false
+            }
+        }
+        btPunto.onclick=function(){
+            if (otroOperador==true){
+                addNumero(".")
+                otroOperador=false
+            }
+        }
+    </script>
+</body>
+</html>

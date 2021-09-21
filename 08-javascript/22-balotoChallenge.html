@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Document</title>
+    <style>
+        section.fondo{
+            background: url(imgs/baloto/Fondo/Fondo.png)no-repeat; 
+            width: 1000px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        
+        .botones{
+            margin: 5px;
+        }
+
+        button.play{
+            background: url(imgs/baloto/Botones/PlayButton.png) no-repeat;
+            width: 300px;
+            height: 220px;
+            border: none;
+            margin-left: 5px;
+        }
+
+        button.play:hover{
+            transform: scale(1.1);
+        }
+
+        @font-face{
+            font-family: lol;
+            src: url("Font/FrizQuadrataRegular.ttf");
+        }
+
+        ul.balotos{
+            width: 600px;
+            margin: 80px 150px;
+            display:flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .numerosBaloto{
+            margin-top: 55px;
+            text-align: center;
+            font-size: 50px;
+            color: green;
+            font-family: lol;
+        }
+        
+        #numeroRojo {
+            margin-top: 55px;
+            text-align: center;
+            font-size: 50px;
+            color: #ffe600 !important;
+            font-family: lol;
+        }
+
+
+        li.baloto1{
+            
+            background: url(imgs/baloto/Cristales/CristalAzul.png) no-repeat;
+            width: 85px;
+            height: 160px;
+            margin: 10px;
+        }
+        
+        li.baloto2{
+            
+            background: url(imgs/baloto/Cristales/CristalAzul.png) no-repeat;
+            width: 85px;
+            height: 160px;
+            margin: 10px;
+        }
+        li.baloto3{
+            
+            background: url(imgs/baloto/Cristales/CristalAzul.png) no-repeat;
+            width: 85px;
+            height: 160px;
+            margin: 10px;
+        }
+        li.baloto4{
+            
+            background: url(imgs/baloto/Cristales/CristalAzul.png) no-repeat;
+            width: 85px;
+            height: 160px;
+            margin: 10px;
+        }
+        li.baloto5{
+            
+            background: url(imgs/baloto/Cristales/CristalAzul.png) no-repeat;
+            width: 85px;
+            height: 160px;
+            margin: 10px;
+        }
+        li.balotoRojo{
+            
+            background: url(imgs/baloto/Cristales/CristalRojo.png) no-repeat;
+            width: 57px;
+            height: 149px;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span>Baloto of Runeterra</h1>
+        </header>
+        <section>
+            <section class="fondo">
+                <div class="botones">
+                    <button class="play"></button>
+                </div>
+                <div class="resultado">
+                    <ul class="balotos">
+
+                        <li class="baloto baloto1 animate__animated" id="balota1">
+                            <div class="numerosBaloto" id="numero1"></div>
+                        </li>
+
+                        <li class="baloto baloto2 animate__animated" id="balota2">
+                            <div class="numerosBaloto" id="numero2"></div>
+                        </li>
+
+                        <li class="baloto baloto3 animate__animated" id="balota3">
+                            <div class="numerosBaloto" id="numero3"></div>
+                        </li>
+
+                        <li class="baloto baloto4 animate__animated" id="balota4">
+                            <div class="numerosBaloto" id="numero4"></div>
+                        </li>
+
+                        <li class="baloto baloto5 animate__animated" id="balota5">
+                            <div class="numerosBaloto" id="numero5"></div>
+                        </li>
+
+                        <li class="baloto balotoRojo animate__animated" id="balotaR">
+                            <div class="numerosBaloto" id="numeroRojo"></div>
+                        </li>
+
+                    </ul>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+<script>
+    
+    const btnPlay   =document.querySelector(".botones button.play");
+    const balotas   =document.querySelectorAll(".baloto");
+    
+    const numR1=document.getElementById("numero1");
+    const numR2=document.getElementById("numero2");
+    const numR3=document.getElementById("numero3");
+    const numR4=document.getElementById("numero4");
+    const numR5=document.getElementById("numero5");
+    const numRojoR=document.getElementById("numeroRojo");
+
+
+    
+    btnPlay.onclick=function(){
+        var rojo=[];
+        var listaNumeros=[];
+        while (listaNumeros.length<5){
+            const numerito=Math.floor(Math.random()*42);
+            if(listaNumeros.indexOf(numerito)==-1){
+                listaNumeros.push(numerito);
+            }    
+        }
+        while (rojo.length<1){
+            const i=Math.floor(Math.random()*16);
+            if (rojo.indexOf(i)==-1){
+                rojo.push(i);
+            }
+        }
+
+        numR1.innerHTML=listaNumeros[0];
+        numR2.innerHTML=listaNumeros[1];
+        numR3.innerHTML=listaNumeros[2];
+        numR4.innerHTML=listaNumeros[3];
+        numR5.innerHTML=listaNumeros[4];
+        numRojoR.innerHTML=rojo[0]
+
+        
+        for (let i = 0; i < balotas.length; i++) {
+            setTimeout(balotas[i].classList.add("animate__fadeInDown"),2000);
+            
+            setTimeout(function(){
+                for (let i = 0; i < balotas.length; i++) {
+                    balotas[i].classList.remove("animate__fadeInDown");
+                }
+            },2000)
+        }
+    }
+    
+    
+
+</script>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Cookies</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        
+        .fondo{
+            background: url(imgs/Game/Fondo.png)no-repeat;
+            width: 814px;
+            height: 1052px;
+            margin: 0 auto;
+            display: flex;
+        }
+        .pantalla{
+            width: 60%;
+            height: 65%;
+        }
+        .meteoro{
+            background: url(imgs/Game/Meteoro.png)no-repeat;
+            width: 120px;
+            height: 114px;
+            position: relative;
+            margin-right: 0;
+            top: 30px;
+            left: 320px;
+            /* animation: 2s animParallaxSm linear infinite; */
+        }
+
+        /* @keyframes animParallaxSm {
+            0%   { background-position: 0px 0px; }
+            100% { background-position: 0px 540px;    }
+        } */
+
+        .play{
+            background: url(imgs/Game/BTNplay.png)no-repeat;
+            width: 157px;
+            height: 148px;
+            position: relative;
+            left: 35%;
+            top: 400px;
+            border: none;
+        }
+        .play:hover{
+            background: url(imgs/Game/hover.png)no-repeat;
+        }
+
+        .nave{
+            background: url(imgs/Game/Nave.png)no-repeat;
+            width: 126px;
+            height: 158px;
+            position: relative;
+            left: 180px;
+            top: 400px;
+        }
+        .datos{
+            width: 40%;
+            height: 100%;
+        }
+        .vida{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            border: 2px solid blue;
+            left: 69%;
+            top: 13%;
+            font-size: 50px;
+            text-align: center;
+            color: #3c661e;
+        }
+        .escudo{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            border: 2px solid black;
+            left: 69%;
+            top: 20%;
+            font-size: 50px;
+            text-align: center;
+            color: #3c661e;
+        }
+        #nivel{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            border: 2px solid white;
+            left: 69%;
+            top: 27.5%;
+            font-size: 50px;
+            text-align: center;
+            color: #3c661e;
+        }
+        #tiempo{
+            width: 80px;
+            height: 50px;
+            position: relative;
+            border: 2px solid green;
+            left: 54%;
+            top: 33.5%;
+            font-size: 50px;
+            text-align: center;
+            color: #f31616;
+        }
+        .palanca{
+            background: url(imgs/Game/Palanca.png)no-repeat;
+            width: 151px;
+            height: 139px;
+            position: relative;
+            top: 55%;
+            left: 28%;
+        }
+        .izq{
+            background: url(imgs/Game/palancaIz.png)no-repeat;
+            width: 151px;
+            height: 139px;
+            position: relative;
+            top: 55%;
+            left: 28%;
+        }
+        .der{
+            background: url(imgs/Game/palancaDer.png)no-repeat;
+            width: 151px;
+            height: 139px;
+            position: relative;
+            top: 55%;
+            left: 28%;
+        }
+        .arriba{
+            background: url(imgs/Game/palancaUP.png)no-repeat;
+            width: 151px;
+            height: 139px;
+            position: relative;
+            top: 55%;
+            left: 28%;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Cookies Space</span></h1>
+        </header>
+        <section>
+            <div class="fondo">
+                <div class="pantalla">
+                    <div class="meteoro"></div>
+                    <button class="play"></button>        
+                    <div class="nave" style="display: none;"></div>
+                </div>
+                <div class="datos">            
+                    <div class="vida">3</div>
+                    <div class="escudo">✓</div>
+                    <div id="nivel">0</div>
+                    <div id="tiempo">60</div>
+                    <div class="palanca"></div>   
+                </div>              
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+
+    // Globally Variables & Constants 
+    const btnPlay  = document.querySelector('.play');
+    const asteroid = document.querySelector('.meteoro');
+    const naveStyle =document.querySelector(".nave");
+    var palanca=document.querySelector(".palanca");
+    var pantalla=document.querySelector(".pantalla");
+    var nivel=document.getElementById("nivel");
+
+    var time       = document.getElementById('tiempo');
+    var lives      = document.getElementById('.vida');
+
+    const posAsteroid  = [20, 180, 320];
+    const posNave = [30,180,320]
+
+        // Object
+        const game = {
+            // Attributes
+            puntos: 0,
+            tiempo: 60,
+            vidas: 3,
+            posicion: 30,
+            // Methods
+            iniciar: function() {
+                this.cronometro(); 
+                this.mover();
+                this.asteroideRandom();
+                this.movimientoMeteoro();
+                this.collidesWith();
+
+            },
+            cronometro: function() {
+                var cronometro= setInterval(function() {
+                    if (game.tiempo>0){
+                        time.innerText=parseInt(game.tiempo--);
+                    }
+                    else{
+                        alert("Juego terminado\nPuntos :"+game.vidas*100);
+                        clearInterval(cronometro);
+                    }
+                    if(game.tiempo%10==0){
+                        game.puntos+=10;
+                        nivel.innerText=game.puntos;
+                    }                  
+                }, 1000);
+            },
+            mover: function(event) {
+                document.onkeydown = function(event) {
+                    if(event.keyCode==37){
+                        palanca.classList.add ("izq");
+                        naveStyle.style.left=posNave[0]+"px";
+                    }
+                    else{
+                        palanca.classList.remove ("izq");
+                    }
+                    if(event.keyCode==39){
+                        palanca.classList.add ("der");
+                        naveStyle.style.left=posNave[2]+"px";
+                    }
+                    else{
+                        palanca.classList.remove ("der");
+                    }
+                    if(event.keyCode==38){
+                        palanca.classList.add ("arriba");
+                        naveStyle.style.left=posNave[1]+"px";
+                    }
+                    else{
+                        palanca.classList.remove ("arriba");
+                    }
+                }
+            
+            },
+            movimientoMeteoro: function(){
+                setInterval(() => {
+                    asteroid.style.top=game.posicion+"px";
+                    game.posicion+=1;
+                    if(asteroid.style=="540px"){  
+                        asteroid.style.top="30px";
+                    }                
+                }, 10);
+            },
+            asteroideRandom: function() {
+                setInterval(function() {
+                    let pos = Math.floor(Math.random() * posAsteroid.length );
+                    asteroid.style.left=posAsteroid[pos]+"px";
+                }, 6000);
+            },
+            collidesWith:function () {
+    
+                element1top    = naveStyle.offsetTop;
+                element1left   = naveStyle.offsetLeft;
+                element1right  = Number(naveStyle.offsetLeft) + Number(naveStyle.offsetWidth);
+                element1bottom = Number(naveStyle.offsetTop)  + Number(naveStyle.offsetHeight);
+
+                element2top    = asteroid.offsetTop;
+                element2left   = asteroid.offsetLeft;
+                element2right  = Number(asteroid.offsetLeft) + Number(asteroid.offsetWidth);
+                element2bottom = Number(asteroid.offsetTop)  + Number(asteroid.offsetHeight);
+
+                if (element1right  > element2left   && 
+                    element1left   < element2right  && 
+                    element1top    < element2bottom && 
+                    element1bottom > element2top ) {
+                        game.vidas-=1;
+                    } 
+            }
+        }
+        // Events
+        btnPlay.onclick = function() {
+            alert("Left Arrow:Left\nUp Arrow :Mid\nRigh Arrow :Right")
+            game.iniciar();
+            btnPlay.style.display="none";
+            naveStyle.style.display="";
+        }
+        
+</script>
+
+</html>

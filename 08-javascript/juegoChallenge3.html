@@ -16,6 +16,7 @@
             display: flex;
         }
         .pantalla{
+            border: 2px solid red;
             width: 60%;
             height: 65%;
         }
@@ -57,6 +58,7 @@
             top: 400px;
         }
         .datos{
+            border: 2px solid yellow;
             width: 40%;
             height: 100%;
         }
@@ -206,7 +208,7 @@
                         game.puntos+=10;
                         nivel.innerText=game.puntos;
                     }                  
-                }, 1000);
+                }, 100);
             },
             mover: function(event) {
                 document.onkeydown = function(event) {
@@ -241,7 +243,7 @@
                     if(asteroid.style=="540px"){  
                         asteroid.style.top="30px";
                     }                
-                }, 10);
+                }, 50);
             },
             asteroideRandom: function() {
                 setInterval(function() {
@@ -271,7 +273,6 @@
         }
         // Events
         btnPlay.onclick = function() {
-            alert("Left Arrow:Left\nUp Arrow :Mid\nRigh Arrow :Right")
             game.iniciar();
             btnPlay.style.display="none";
             naveStyle.style.display="";

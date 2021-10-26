@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Cookies</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        
+        .fondo{
+            background: url(imgs/Game/Fondo.png)no-repeat;
+            width: 814px;
+            height: 1052px;
+            margin: 0 auto;
+            display: flex;
+        }
+        .pantalla{
+            border: 2px solid red;
+            width: 60%;
+            height: 65%;
+        }
+        .meteoro{
+            background: url(imgs/Game/Meteoro.png)no-repeat;
+            width: 100%;
+            height: 700px;
+            position: relative;
+            top: 30px;
+            left: 320px;
+            animation: 2s animParallaxSm linear infinite;
+        }
+
+        @keyframes animParallaxSm {
+            0%   { background-position: 0px 0px; }
+            100% { background-position: 0px 540px;    }
+        }
+
+        .play{
+            background: url(imgs/Game/BTNplay.png)no-repeat;
+            width: 157px;
+            height: 148px;
+            position: relative;
+            left: 35%;
+            top: -180px;
+            border: none;
+        }
+        .play:hover{
+            background: url(imgs/Game/hover.png)no-repeat;
+        }
+
+        .nave{
+            background: url(imgs/Game/Nave.png)no-repeat;
+            width: 126px;
+            height: 158px;
+            position: relative;
+            left: 180px;
+            top: -180px;
+        }
+        .datos{
+            border: 2px solid yellow;
+            width: 40%;
+            height: 100%;
+        }
+        .vida{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            border: 2px solid blue;
+            left: 69%;
+            top: 13%;
+            font-size: 50px;
+            text-align: center;
+            color: #3c661e;
+        }
+        .escudo{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            border: 2px solid black;
+            left: 69%;
+            top: 20%;
+            font-size: 50px;
+            text-align: center;
+            color: #3c661e;
+        }
+        .nivel{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            border: 2px solid white;
+            left: 69%;
+            top: 27.5%;
+            font-size: 50px;
+            text-align: center;
+            color: #3c661e;
+        }
+        .tiempo{
+            width: 80px;
+            height: 50px;
+            position: relative;
+            border: 2px solid green;
+            left: 54%;
+            top: 33.5%;
+            font-size: 50px;
+            text-align: center;
+            color: #f31616;
+        }
+        .palanca{
+            background: url(imgs/Game/Palanca.png)no-repeat;
+            width: 151px;
+            height: 139px;
+            position: relative;
+            top: 55%;
+            left: 28%;
+        }
+        .izq{
+            background: url(imgs/Game/palancaIz.png)no-repeat;
+            width: 151px;
+            height: 139px;
+            position: relative;
+            top: 55%;
+            left: 28%;
+        }
+        .der{
+            background: url(imgs/Game/palancaDer.png)no-repeat;
+            width: 151px;
+            height: 139px;
+            position: relative;
+            top: 55%;
+            left: 28%;
+        }
+        .arriba{
+            background: url(imgs/Game/palancaUP.png)no-repeat;
+            width: 151px;
+            height: 139px;
+            position: relative;
+            top: 55%;
+            left: 28%;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Cookies Space</span></h1>
+        </header>
+        <section>
+            <div class="fondo">
+                <div class="pantalla">
+                    <div class="meteoro"></div>
+                    <button class="play"></button>
+                    <div class="estrellas"></div>
+                    
+                    <div class="nave" style="display: none;"></div>
+                </div>
+                <div class="datos">            
+                    <div class="vida">3</div>
+                    <div class="escudo">✓</div>
+                    <div class="nivel">1</div>
+                    <div class="tiempo">200</div>
+                    <div class="palanca"></div>   
+                </div>              
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+
+    var fondo=document.querySelector(".fondo");
+    var vida=document.querySelector(".vida");
+    var pantalla=document.querySelector(".pantalla");
+    var btnPlay=document.querySelector(".play");
+    var naveStyle=document.querySelector(".nave");
+    var palanca=document.querySelector(".palanca");
+    var posicionesN = [30,180,320];
+    var pòsicionesM = [20,180,320]
+
+    var colision;
+
+    lifes=vida.innerHTML;
+
+    btnPlay.onclick=function(){
+        btnPlay.style.display="none";
+        naveStyle.style.display="";
+        
+    }  
+    document.onkeydown = function(event) {
+        
+        if(event.keyCode==37){
+            palanca.classList.add ("izq");
+            naveStyle.style.left=posicionesN[0]+"px";
+        }
+        else{
+            palanca.classList.remove ("izq");
+        }
+        if(event.keyCode==39){
+            palanca.classList.add ("der");
+            naveStyle.style.left=posicionesN[2]+"px";
+        }
+        else{
+            palanca.classList.remove ("der");
+        }
+        if(event.keyCode==40 || event.keyCode==38){
+            palanca.classList.add ("arriba");
+            naveStyle.style.left=posicionesN[1]+"px";
+        }
+        else{
+            palanca.classList.remove ("arriba");
+        }
+    }
+    
+    function collidesWith (element1, element2) {
+    
+    element1top    = element1.offsetTop;
+    element1left   = element1.offsetLeft;
+    element1right  = Number(element1.offsetLeft) + Number(element1.offsetWidth);
+    element1bottom = Number(element1.offsetTop)  + Number(element1.offsetHeight);
+
+    element2top    = element2.offsetTop;
+    element2left   = element2.offsetLeft;
+    element2right  = Number(element2.offsetLeft) + Number(element2.offsetWidth);
+    element2bottom = Number(element2.offsetTop)  + Number(element2.offsetHeight);
+
+    if (element1right  > element2left   && 
+        element1left   < element2right  && 
+        element1top    < element2bottom && 
+        element1bottom > element2top ) {
+            colision=true;
+        } else {
+            colision=false;
+    }
+}
+    /* while (vida>0) {
+        setInterval(() => {
+            if(!(collidesWith(naveStyle,mete))){
+
+            }else{
+                vida-=1
+            }
+        }, 120000);
+    }  */
+</script>
+
+</html>

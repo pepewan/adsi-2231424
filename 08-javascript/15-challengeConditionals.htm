@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Conditionals</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+    <style>
+        #skyn{
+            background: url(imgs/chooseMineraft/Intersect.png) no-repeat;
+            width: 341px;
+            height: 604px;
+            margin: 0px auto;
+        }
+        
+        #skyn.mujer{
+            background: url(imgs/chooseMineraft/Women.png)no-repeat;
+            width: 341px;
+            height: 604px;
+            margin: 0 auto;
+        }
+
+        #fila3.mujer{
+            background: url(imgs/chooseMineraft/AlexSelect.png)no-repeat;
+            width: 100px;
+            height: 150px;
+            margin: 20px 120px;
+        }
+
+
+        #fila3.hombre{
+            background: url(imgs/chooseMineraft/SteveSelect.png)no-repeat;
+            width: 100px;
+            height: 150px;
+            margin: 20px 120px;
+        }
+
+
+
+        #skyn.hombre{
+            background: url(imgs/chooseMineraft/men.png)no-repeat;
+            width: 341px;
+            height: 604px;
+            margin: 0 auto;
+        }
+
+        @font-face{
+            font-family: minecraft;
+            src: url("Font/Minecraft.ttf");
+        }
+
+        #resultado.guerra{
+            background: url(imgs/chooseMineraft/zonaGuerra.png);
+            width: 287px;
+            height: 121px;
+            margin: 0 25px;
+        }
+        #resultado.noGuerra{
+            background: url(imgs/chooseMineraft/zonaNoGuerra.png)no-repeat;
+            width: 287px;
+            height: 121px;
+            margin: 0 25px;
+        }
+
+        p {
+            font-family: minecraft;
+            font-size: 30px;
+            text-align: center;
+            color: orange;
+            display: inline-block;
+        }
+        .fila2 p{
+            margin: 0;
+            color: #ff0000;
+        }
+
+        
+        #fila3{
+            display:flex;
+            justify-content: space-between;
+            margin: 10px;
+        }
+
+        #fila3 #Alex{
+            background: url(imgs/chooseMineraft/Alex.png)no-repeat;
+            width: 100px;
+            height: 151px;
+            margin-left: 20px;
+            border: 0;
+        }
+
+        #fila3 #Alex.Select{
+            background: url(imgs/chooseMineraft/AlexSelect.png)no-repeat;
+            width: 100px;
+            height: 151px;
+            margin-left: 20px;
+            border: 0;
+        }
+
+        #fila3 #Alex:hover{
+            background: url(imgs/chooseMineraft/AlexSelect.png)no-repeat;
+            width: 100px;
+            height: 151px;
+            margin-left: 20px;
+            border: 0;
+        }
+
+        #fila3 #Steve{
+            background: url(imgs/chooseMineraft/Steve.png)no-repeat;
+            width: 100px;
+            height: 151px;
+            margin-right: 20px;
+            border: 0;
+        }
+
+        #fila3 #Steve.Select{
+            background: url(imgs/chooseMineraft/SteveSelect.png)no-repeat;
+            width: 100px;
+            height: 151px;
+            margin-right: 20px;
+            border: 0;
+        }
+        
+        #fila3 #Steve:hover{
+            background: url(imgs/chooseMineraft/SteveSelect.png)no-repeat;
+            width: 100px;
+            height: 151px;
+            margin-left: 20px;
+            border: 0;
+        }
+
+
+        #name2{
+            background: url(imgs/chooseMineraft/Text.png)no-repeat;
+            width: 285px;
+            height: 34px;
+            margin-left: 22px;
+            border: 0;
+        }
+
+        #fila4 p,#fila5 p{
+            font-size: 15px;
+            margin: 0;
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        
+
+        #birthDay{
+            background: url(imgs/chooseMineraft/Text.png)no-repeat;
+            width: 285px;
+            height: 34px;
+            margin-left: 22px;
+            border: 0;
+        }
+
+        #fila6 button{
+            background: url(imgs/chooseMineraft/Check.png)no-repeat;
+            width: 205px;
+            height: 56px;
+            border: 0;
+            margin-left: 65px;
+            margin-top: 20px;
+        }
+
+        #fila6 button p{
+            margin: 0 auto;
+        }
+    </style>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Challenge CHoose</span></h1>
+        </header>
+        <section>
+            <div id="skyn">
+                <div class="fila1">
+                    <p>Please enter real information</p>
+                </div>
+                <div class="fila2">
+                    <p>Please choose your gender:</p>
+                </div>
+                <div id="fila3">
+                    
+                    <button id="Alex"></button>
+                    <button id="Steve"></button>
+                    
+                </div>
+                <div id="resultado">
+
+                </div>
+                <div id="fila4">
+                    <p id="fullName">Full Name</p>
+                    <input type="text" id="name2">
+                </div>
+                <div id="fila5">
+                    <p id="bithday">Birth Day</p>
+                    <input type="date" id="birthDay">
+                </div>
+                <div id="fila6">
+                    <button id="check">
+                        <p>CHECK</p>
+                        <div id="cumple"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+    var alex=false
+    var steve=false
+    var edad
+
+    var alexSelect=document.getElementById("Alex")
+    var steveSelect=document.getElementById("Steve")
+    var skyntype=document.getElementById("skyn")
+    var check=document.getElementById("check")
+    var text=document.getElementById("name2")
+    var alexImg=document.getElementById("Alex")
+    var steveImg=document.getElementById("Steve")
+    var fila3=document.getElementById("fila3")
+    var resultado=document.getElementById("resultado")
+    var fila4=document.getElementById("fila4")
+    var fila5=document.getElementById("fila5")
+    var fila6=document.getElementById("fila6")
+    var birthday=document.getElementById("birthDay")
+    var cumple=document.getElementById("cumple")
+
+    function selecAlex(){      
+        if(!alex){
+            alexSelect.classList.add ("Select")  
+            alex=true
+            steve=false
+            steveSelect.classList.remove ("Select")
+        }
+    }
+
+    alexSelect.onclick=function(){
+        selecAlex()
+    } 
+
+    function selecSteve(){
+        if(!steve)
+            steveSelect.classList.add ("Select")
+            steve=true
+            alex=false
+            alexSelect.classList.remove ("Select")
+    }
+
+    steveSelect.onclick=function(){
+        selecSteve()
+    }
+
+    function _calculateAge(birthday) { // birthday is a date
+        var ageDifMs = Date.now() - birthday.getTime();
+        var ageDate = new Date(ageDifMs); // miliseconds from epoch
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+
+    check.onclick=function(){
+        edad=parseInt(_calculateAge(new Date(birthday)))
+    }
+
+    text.innerText="2020"
+    function salida(){
+            if(alex || steve){
+                
+                if (alex){
+                    skyntype.classList.add ("mujer")
+                    skyntype.classList.remove ("hombre")
+                    fila3.removeChild(steveSelect)
+                    fila3.removeChild(alexSelect)
+                    fila3.classList.add("mujer")
+                    resultado.classList.add("noGuerra")
+                    fila4.innerHTML=""
+                    fila5.innerHTML=""
+                    fila6.innerHTML=""
+                }
+            
+                else if(steve){
+                    
+                        skyntype.classList.add ("hombre")
+                        skyntype.classList.remove ("mujer")
+                        fila3.removeChild(steveSelect)
+                        fila3.removeChild(alexSelect)
+                        fila3.classList.add("hombre")
+                        fila4.innerHTML=""
+                        fila5.innerHTML=""
+                        fila6.innerHTML=""
+                        if(edad>=18){
+                            resultado.classList.add("guerra")
+                    }
+                        else{
+                            resultado.classList.add("noGuerra")
+                        }
+                }
+            }
+        }
+    
+    
+    check.onclick=function(){
+        salida()
+    }
+    
+</script>
+</html>

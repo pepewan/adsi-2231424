@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        button{
+            padding: 40px;
+            border-radius: 20px;
+            cursor: pointer;
+            background-color: aqua;
+            border: 2px solid #0a5d5d;
+            display: block;
+            margin: 40px auto;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> todolist</h1>
+        </header>
+        <button class="btn">
+            Contar doble clics
+        </button>
+    </main>
+    <script src="JS/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $count = 0;
+            $("button.btn").dblclick(function(){
+                $count++;
+                $(this).text("Contar doble clics :" + $count);
+            });
+        });
+    </script>
+</body>
+
+</html>

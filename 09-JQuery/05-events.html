@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        body{
+            transition: all 0.2s ease-in;
+        }
+        .box{
+            border: 2px solid red;
+            background: url(imgs/Noxus.png)no-repeat center;
+            filter: grayscale(1);
+            width: 200px;
+            margin: 22px auto;
+            height: 200px;
+            transition: all 0.5 ease-in;
+        }
+        .box.enter{
+            background-size: cover;
+            filter: grayscale(0);
+        }
+        input,select{
+            padding: 10px;
+            display: block;
+            margin: 22px auto;
+            border-radius: 4px;
+            width: 280px;
+        }
+        output{
+            font-size: 1.5rem;
+            color: #6200ff;
+            display: block;
+            text-align: center;
+        }
+        .ball{
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border-radius: 100px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> todolist</h1>
+        </header>
+        <section>
+            <h2>Mouse Events</h2>
+            <div class="box">
+
+            </div>
+            <h2>Keyboard Events</h2>
+            <input type="text" placeholder="Ingrese texto">
+            <output></output>
+            <h2>Form Events</h2>
+            <select>
+                <option value="">Select font size</option>
+                <option value="1">1rem</option>
+                <option value="2">2rem</option>
+                <option value="3">3rem</option>
+            </select>
+            <h2>Window Events</h2>
+            
+            <p class="msj"></p>
+            <div class="ball"></div>
+        </section>
+    </main>
+    <script src="JS/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //Evento de mouse
+            $("div.box").mouseenter(function(e){
+                $(this).addClass("enter");
+            });
+            $("div.box").mouseleave(function(e){
+                $(this).removeClass("enter");
+            });
+            //eventos de teclado
+            $("input").keyup(function(e){
+                $("output").text($(this).val());
+            });
+            //Form events
+            $("select").change(function(e){
+                e.preventDefault();
+                switch($(this).val()){
+                    case "1":
+                        $("body").css("font-size","1.5rem");
+                        break;
+                    case "2":
+                        $("body").css("font-size","2rem");
+                        break;
+                    case "3":
+                        $("body").css("font-size","3rem");
+                        break;
+                    default:
+                        $("body").css("font-size","1rem");
+                        break;
+                }
+            });
+            //Window events
+            $(window).resize(function(e){
+                $tamanioVentanaX=$(this).outerWidth()
+                $tamanioVentanay=$(this).outerHeight()
+                alert("Eje X"+$tamanioVentanaX+"\nEje Y"+$tamanioVentanay);          
+            });
+            $sizeball=2;
+            $(window).scroll(function(e){
+                $dirscroll=$(this).scrollTop();
+                if($dirscroll<0){
+                    $sizeball+=0.10;
+                    $("div.ball").css("transform","scale("+$sizeball+")");
+                }else{
+                    $sizeball-=0.10;
+                    if($sizeball>1){
+                        $("div.ball").css("transform","scale("+$sizeball+")");
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

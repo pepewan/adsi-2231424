@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET-GET</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+
+        .botones{
+            justify-content: space-between;
+            display: flex;
+        }
+
+        button{
+            display: inline-block;
+        }
+
+        .logos{
+            justify-content: space-around;
+            display: flex;
+        }
+
+        section{
+            display: flex;
+            justify-content: space-between;
+            border: 2px solid red;
+        }
+        .fleljord{
+            background: url(imgs/Freljord_LoR_Region.png)no-repeat;
+            width: 128px;
+            height: 128px;
+            display: inline-block;
+        }
+        .demacia{
+            background: url(imgs/Demacia_LoR_Region.png)no-repeat;
+            width: 128px;
+            height: 128px;
+            display: inline-block;
+        }
+        .noxus{
+            background: url(imgs/Noxus_LoR_Region.png)no-repeat;
+            width: 128px;
+            height: 128px;
+            display: inline-block;
+        }
+        .ionia{
+            background: url(imgs/Ionia_LoR_Region.png)no-repeat;
+            width: 128px;
+            height: 128px;
+            display: inline-block;
+        }
+        .piltover-zaun{
+            background: url(imgs/Piltover_Zaun_LoR_Region.png)no-repeat;
+            width: 128px;
+            height: 128px;
+            display: inline-block;
+        }
+        .aguasTurbias{
+            background: url(imgs/Bilgewater_LoR_Region.png)no-repeat;
+            width: 128px;
+            height: 128px;
+            display: inline-block;
+        }
+        .islasVendecidas{
+            background: url(imgs/Shadow_Isles_LoR_Region.png)no-repeat;
+            width: 128px;
+            height: 128px;
+            display: inline-block;
+        }
+        .shurima{
+            background: url(imgs/Shurima_LoR_Alpha_Region.png)no-repeat;
+            width: 128px;
+            height: 128px;
+            display: inline-block;
+        }
+        .targon{
+            background: url(imgs/Targon_LoR_Region.png)no-repeat;
+            width: 128px;
+            height: 128px;
+            display: inline-block;
+        }
+        .ciudadBandle{
+            background: url(imgs/Bandle_City_LoR_Region.png)no-repeat;
+            width: 128px;
+            height: 128px;
+            display: inline-block;
+        }
+
+        @font-face{
+            font-family: lol;
+            src: url("Font/FrizQuadrataRegular.ttf");
+        }
+
+        .resumen{
+            margin-top: 50px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span>SET-GET</h1>
+        </header>
+            <div class="logos">
+                <div class="fleljord logo">
+                    
+                </div>
+                <div class="demacia logo">
+                    
+                </div>
+                <div class="noxus logo">
+                    
+                </div>
+                <div class="piltover-zaun logo">
+                    
+                </div>
+                <div class="ionia logo">
+                    
+                </div>
+                
+                <div class="aguasTurbias logo">
+                    
+                </div>
+                <div class="islasVendecidas logo">
+                    
+                </div>
+                <div class="shurima logo">
+                    
+                </div>
+                <div class="targon logo">
+                    
+                </div>
+                <div class="ciudadBandle logo">
+                    
+                </div>
+            </div>
+            <div class="botones">
+                <button id="Fleljord" class="btn">Fleljord</button>
+                <button id="Demacia" class="btn">Demacia</button>
+                <button id="Noxus" class="btn">Noxus</button>
+                <button id="Piltover-zaun" class="btn">Piltover-zaun</button>
+                <button id="Ionia" class="btn">Ionia</button>
+                <button id="Aguas-Turbias" class="btn">Aguas Turbias</button>
+                <button id="islas-Vendecidas" class="btn">Islas Vendecidas</button>
+                <button id="Shurima" class="btn">Shurima</button>
+                <button id="Targon" class="btn">Targon</button>
+                <button id="Bandle-City" class="btn">Bandle City</button>
+            </div>
+
+            <div class="resumen">
+                <p>Seleccione una region:</p>
+            </div>
+        </section>
+    </main>
+    <script src="JS/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $resumen=false;
+            $('#Fleljord').click(function (e) {
+                if(($('.resumen').html()!='4')){
+                    $('.resumen').text('');
+                    $('.resumen').text("El Fréljord es un lugar duro y despiadado en donde sus habitantes nacen siendo guerreros y tendrán que prosperar contra todo pronóstico.Orgullosas y poseedoras de una independencia feroz, las tribus del Fréljord son consideradas salvajes, ásperas y ''bárbaras'' por sus vecinos a lo largo de Valoran, quienes desconocen las tradiciones antiguas que las forjaron. Varios miles de años atrás, la alianza entre las hermanas Avarosa, Serylda y Lissandra se quebró en una guerra que, sin saberlo, amenazó a toda Runaterra al sumir en caos y en un invierno casi permanente a las tierras del norte. Ahora, solo aquellos mortales verdaderamente excepcionales, inmunes a los estragos del fuego y del viento, son quienes aparentan estar destinados a liderar.");
+                }
+            })
+            $('#Demacia').click(function (e) {
+                if(($('.resumen').html()!='4')){
+                    $('.resumen').text('');
+                    $('.resumen').text("Al pertenecer a un reino poderoso y aferrado a la ley con una prestigiosa historia militar, los habitantes de Demacia valoran ante todo los ideales de justicia, de honor y del deber, al tiempo que se enorgullecen acérrimamente de su herencia cultural. Pero, a pesar de sus principios nobles, esta gran nación autónoma se ha vuelto cada vez más insular y aislacionista durante los últimos siglos.");
+                }
+            })
+            $('#Noxus').click(function (e) {
+                if(($('.resumen').html()!='4')){
+
+                    $('.resumen').text('');
+                    $('.resumen').text("Noxus es un imperio poderoso con una reputación aterradora. Para quienes viven más allá de sus fronteras, es brutal, expansionista y amenazante. Sin embargo, para aquellos que logran ver más allá de su exterior bélico, se encuentran con una sociedad inusualmente inclusiva que respeta y cultiva las fortalezas y los talentos de los suyos.");
+                }
+            })
+            $('#Piltover-zaun').click(function (e) {
+                if(($('.resumen').html()!='4')){
+
+                    $('.resumen').text('');
+                    $('.resumen').text("Zaun es un gran distrito suburbano ubicado en la profundidad de los cañones y valles que rodean Piltóver. La poca luz que llega allí abajo se filtra por los vapores que salen de las tuberías corroídas y se refleja a través de los vitrales de la arquitectura industrial. Zaun y Piltóver estuvieron alguna vez unidas; ahora son sociedades separadas, pero simbióticas. A pesar de existir sumida en una permanente luz crepuscular, Zaun progresa, su gente es enérgica y su cultura es rica. La riqueza de Piltóver le permitió a Zaun desarrollarse a la par; un espejo oscuro de la ciudad de arriba. Muchos de los artículos que ingresan a Piltóver encuentran la manera de entrar al mercado negro de Zaun, al igual que las peligrosas investigaciones de los inventores hextech, que se topan con demasiadas restricciones en la ciudad encumbrada, muchas veces son bien recibidas en Zaun. El ilimitado desarrollo de tecnologías volátiles e industrias imprudentes corrompieron y pervirtieron grandes áreas de Zaun. Cantidades de desperdicios tóxicos quedan estancados en las partes más bajas de la ciudad, pero aún allí la gente encuentra la manera de existir y prosperar.");
+                }
+            })
+            $('#Ionia').click(function (e) {
+                if(($('.resumen').html()!='4')){
+
+                    $('.resumen').text('');
+                    $('.resumen').text("Rodeada por mares traicioneros, Jonia se compone de una serie de provincias aliadas repartidas por un gran archipiélago conocido por muchos como las Tierras Originarias. La búsqueda del equilibrio entre todas las cosas es lo que ha moldeado a la cultura jonia, por lo que el límite entre los reinos de lo material y lo espiritual suele ser más permeable ahí, en especial en los bosques silvestres y en las montañas.");
+                }
+            })
+            $('#Aguas-Turbias').click(function (e) {
+                if(($('.resumen').html()!='4')){
+
+                    $('.resumen').text('');
+                    $('.resumen').text("Al pertenecer a un reino poderoso y aferrado a la ley con una prestigiosa historia militar, los habitantes de Demacia valoran ante todo los ideales de justicia, de honor y del deber, al tiempo que se enorgullecen acérrimamente de su herencia cultural. Pero, a pesar de sus principios nobles, esta gran nación autónoma se ha vuelto cada vez más insular y aislacionista durante los últimos siglos.");
+                }
+            })
+            $('#islas-Vendecidas').click(function (e) {
+                if(($('.resumen').html()!='4')){
+
+                    $('.resumen').text('');
+                    $('.resumen').text("Al pertenecer a un reino poderoso y aferrado a la ley con una prestigiosa historia militar, los habitantes de Demacia valoran ante todo los ideales de justicia, de honor y del deber, al tiempo que se enorgullecen acérrimamente de su herencia cultural. Pero, a pesar de sus principios nobles, esta gran nación autónoma se ha vuelto cada vez más insular y aislacionista durante los últimos siglos.");
+                }
+            })
+            $('#Shurima').click(function (e) {
+                if(($('.resumen').html()!='4')){
+
+                    $('.resumen').text('');
+                    $('.resumen').text("Al pertenecer a un reino poderoso y aferrado a la ley con una prestigiosa historia militar, los habitantes de Demacia valoran ante todo los ideales de justicia, de honor y del deber, al tiempo que se enorgullecen acérrimamente de su herencia cultural. Pero, a pesar de sus principios nobles, esta gran nación autónoma se ha vuelto cada vez más insular y aislacionista durante los últimos siglos.");
+                }
+            })
+            $('#Targon').click(function (e) {
+                if(($('.resumen').html()!='4')){
+
+                    $('.resumen').text('');
+                    $('.resumen').text("Al pertenecer a un reino poderoso y aferrado a la ley con una prestigiosa historia militar, los habitantes de Demacia valoran ante todo los ideales de justicia, de honor y del deber, al tiempo que se enorgullecen acérrimamente de su herencia cultural. Pero, a pesar de sus principios nobles, esta gran nación autónoma se ha vuelto cada vez más insular y aislacionista durante los últimos siglos.");
+                }
+            })
+            $('#Bandle-City').click(function (e) {
+                if(($('.resumen').html()!='4')){
+
+                    $('.resumen').text('');
+                    $('.resumen').text("Al pertenecer a un reino poderoso y aferrado a la ley con una prestigiosa historia militar, los habitantes de Demacia valoran ante todo los ideales de justicia, de honor y del deber, al tiempo que se enorgullecen acérrimamente de su herencia cultural. Pero, a pesar de sus principios nobles, esta gran nación autónoma se ha vuelto cada vez más insular y aislacionista durante los últimos siglos.");
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
